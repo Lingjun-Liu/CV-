@@ -1,0 +1,194 @@
+\documentclass{resume} % 使用自定义的 resume.cls 模板文件（决定整体样式）
+
+% ===== 导入常用宏包 =====
+\usepackage[dvipsnames]{xcolor} % 颜色支持（这里用于标题的红色）
+\usepackage{hyperref} 
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5} % 用于 GitHub 图标
+
+% 支持添加超链接（如Homepage、Google Scholar等）
+\usepackage[backend=biber, style=ieee, sorting=none]{biblatex} % 用于文献引用格式（可不动）
+\addbibresource{references.bib} % 关联文献数据库文件 references.bib
+
+% ===== 页面边距设置 =====
+\usepackage[left=0.6in,top=0.4in,right=0.6in,bottom=0.1in]{geometry} % 页面边距（左上右下）
+
+% ===== 定义空格命令（用于排版对齐）=====
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}} 
+
+% ===== 个人信息部分 =====
+\name{Lingjun Liu} % ← 你的名字
+\address{
+\textbf{Email:} \texttt{lingjunliu21@m.fudan.edu.cn} \hspace{2em}
+\textbf{Links:} 
+\href{https://scholar.google.co.jp/citations?user=TsU6bnMAAAAJ&hl=en}{Google Scholar} $\vert$
+\href{https://www.researchgate.net/profile/Lingjun-Liu-4?ev=hdr_xprf}{ResearchGate} $\vert$
+\href{https://github.com/Lingjun-Liu/lingjunliu.github.io}{\faGithub\ GitHub}
+}
+
+% ===== 颜色定义 =====
+\definecolor{CarnegieMellonRed}{RGB}{25,25,112} 
+\definecolor{RoyalBlueCustom}{RGB}{65,105,225}
+% ↑ 定义标题用的红色（可以改为其他RGB颜色）
+
+% ===== 重新定义 section 标题格式（如 EDUCATION / EXPERIENCE 等）=====
+\renewenvironment{rSection}[1]{
+\sectionskip
+\textcolor{CarnegieMellonRed}{\MakeUppercase{#1}} % 标题大写并设为红色
+\sectionlineskip
+\hrule % 添加水平线
+\begin{list}{}{
+\setlength{\leftmargin}{1.5em} % 缩进
+}
+\item[]
+}{
+\end{list}
+}
+% ↑ 上面这段定义决定了每个 \begin{rSection}{XXX} 的标题样式
+% 一般不需要修改
+% ===== 正文部分===== 
+\begin{document} % 开始文档内容渲染
+% ===== 研究兴趣部分===== 
+\begin{rSection}{\bf Research Interests } % 创建“RESEARCH INTERESTS”部分
+{\bf Traditional Demographic Studies} {\bf ; Aging; Social inequality; Social Policy}
+\end{rSection} 
+% ===== 技能/兴趣爱好部分 =====
+\begin{rSection}{\bf Methodological Competencies}
+
+\begin{tabular}{ @{} >{\bfseries}p{0.24\textwidth}  @{\hspace{4ex}} p{0.46\textwidth}  @{\hspace{4ex}} p{0.20\textwidth} @{} }
+
+\textbf{Data \& Visualization} & 
+Web Scraping; API-based Data Extraction; 
+Statistical Visualization; Geospatial Mapping. &
+Python; R ; QGIS \\[1.0em]
+
+\textbf{Inferential Statistics} & 
+Regressions and Decompositions; Causal Inference;
+Multi-State Markov Models; Latent Class Trajectory Analysis. &
+R; Stata \\[1.0em]
+
+\textbf{Computational Social Science} & 
+Text-as-data Analysis (Topic modeling, Word Embeddings, Sentiment Analysis); 
+Machine Learning. &
+R; Python \\
+
+\end{tabular}
+
+\textcolor{RoyalBlueCustom}{Personal learning notes and code related to these methods are available on \href{https://github.com/Lingjun-Liu/lingjunliu.github.io}{\textit{\faGithub\ GitHub}}}
+\end{rSection}
+% ===== 教育背景部分===== 
+\begin{rSection}{\bf Education} % 创建“EDUCATION”部分标题
+{\bf Ph.D. in Demography  } \hfill {\em Dec 2025}  % 学校名称加粗
+\\{\bf Fudan University}, School of Social Development and Public Policy 
+
+{\bf M.A. in Social Security }  \hfill {\em Jun 2021} 
+\\{\bf Shanghai University of Engineering Science},School of Management
+
+
+{\bf B.A. in Public Administration / B.Econ. in Finance }  \hfill {\em Jun 2017} 
+\\{\bf Shandong University of Finance and Economics}, School of Public Administration 
+
+\end{rSection}
+% ===== 发表论文部分 =====
+\begin{rSection}{\bf Academic Papers} \itemsep -2pt
+\textbf{Publications:}
+\begin{enumerate}   
+\item\textbf{Liu, L.}, Mao, B., \& Ji, F. (2025). \textbf{From patterns to pathways: Latent class trajectories of self-perceptions of aging and their causal effects on multi-state functional transitions.} \textit{Archives of Gerontology and Geriatrics}, 133, 105827. \href{https://doi.org/10.1016/j.archger.2025.105827}{https://doi.org/10.1016/j.archger.2025.105827}
+\textcolor{RoyalBlueCustom}{(JCR: Q2, Impact Factor: 3.8)}
+
+\item Mao, B.\dag, Fang, X.\dag, \& \textbf{Liu, L.\dag}. (2025). \textbf{Unclosed wound: Effect of childhood access to healthcare on cardiovascular health trajectories of Chinese older adults based on entropy balancing analysis.} \textit{Frontiers in Public Health}, 13. \href{https://doi.org/10.3389/fpubh.2025.1602953}{\\https://doi.org/10.3389/fpubh.2025.1602953}
+\textcolor{RoyalBlueCustom}{(JCR: Q1, IF: 3.4)}
+
+\item Ren, Y., \& \textbf{Liu, L.}. (2024). \textbf{The Impact of Self-Perceived Ageism on Health and Life Expectancy Among the Elderly.} \textit{Population and Society}, 40(5), 79–90. \href{https://doi.org/10.14132/j.2095-7963.2024.05.007}{https://doi.org/10.14132/
+\\j.2095-7963.2024.05.007} 
+\textcolor{RoyalBlueCustom}{(CSSCI, IF: 2.5)}
+
+\item Ni, Z., Su, C., \& \textbf{Liu, L.}. (2023). \textit{The Heterogeneous Effects of Urbanization on Urban–Rural Poverty: Evidence from 41 Cities in the Yangtze River Delta.} \textit{Exploration of Economic Issues}, (12), 91–104. \href{https://doi.org/CNKI:SUN:JJWS.0.2023-12-006}{https://doi.org/CNKI:SUN:JJWS.0.2023-12-006}
+\textcolor{RoyalBlueCustom}{(CSSCI, IF: 8.5)}
+
+\item \textbf{Liu, L.}, \& Li, H. (2021). \textbf{Factors Influencing Rural Communities’ Willingness to Engage in Socialized Elderly Care.} \textit{Northwest Population Journal}, 42(1), 26–37. \href{https://doi.org/10.15884/j.cnki.issn.1007-0672.2021.01.003}{https://doi.org/10.15\\
+884/j.cnki.issn.1007-0672.2021.01.003}
+\textcolor{RoyalBlueCustom}{(CSSCI, IF: 4.6)}
+
+\item \textbf{Liu, L.}. (2020). \textbf{A Knowledge Mapping Analysis of Research Trends in China’s Elderly Care Models
+.} \textit{Research on Aging Science}, 8(11), 39–48. \href{https://doi.org/CNKI:SUN:LLKX.0.2020-11-006}{https://doi.org/CNKI:SUN:LLKX.0.20
+\\20-11-006}
+\textcolor{RoyalBlueCustom}{(CSCD, IF: 2.4)}
+\end{enumerate}   
+\newpage
+\textbf{Working Papers:}
+\begin{enumerate}   
+\item\textbf{Liu, L.}, Mao, B.,\textbf{Beyond Economic Support: Responsibility, Emotion, and Institutions in the Elder-Care Practices of China’s Only-Child Generation} \textit{(Social policy; Computational text analysi)}
+\item\textbf{Liu, L.},\textbf{How Do Societies Discipline Older Adults' Sense of 'Worth'?
+Unpacking the Social Production of Inequalities in Self-Perception of Uselessness} \textit{(longitudinal data; decomposition analysis)}
+
+\end{enumerate} 
+\end{rSection}
+
+
+% ===== Research Experience =====
+\begin{rSection}{\textbf{Research Experience}}
+
+\textbf{2025 -- present } \quad \textbf{“Innovating Demographic Knowledge with Chinese Characteristics”}, \textit{Shanghai Municipal Propaganda Bureau Major Project}\\
+\textcolor{RoyalBlueCustom}{
+Currently drafting two book chapters: Big-Data and AI-Driven Demographic Research and Methodological Innovations in Demographic Research.}
+
+% --------------------------------------------------
+\textbf{2022 -- 2024} \quad \textbf{“China’s Population Development Strategy in the New Era”}, \\
+\textit{Shanghai Education Commission Major Innovation Project}\\
+\textcolor{RoyalBlueCustom}{
+Participated in the design and implementation of healthy ageing surveys; led the construction of a structured survey database, including data validation, quality checks, and compilation of a detailed codebook; contributed to analytical writing in the final project report.
+}
+
+% --------------------------------------------------
+\textbf{2020 -- 2021} \quad \textbf{“Institutional Support for Rural and Agricultural Development”}, \\
+\textit{Shanghai Municipal Government Decision-Consulting Grant}\\
+\textcolor{RoyalBlueCustom}{
+Conducted household surveys and semi-structured interviews; applied qualitative analysis to identify structural constraints in rural governance.
+}
+
+% --------------------------------------------------
+\textbf{2019 -- 2020} \quad \textbf{“Research on the Strategic Implementation of the Healthy China Initiative”}, \textit{National Social Science Fund of China}\\
+\textcolor{RoyalBlueCustom}{
+Applied Markov chains and system dynamics models to simulate policy costs under different implementation scenarios for Healthy China 2030, from core healthcare spending to full-scale estimates including public health, public services, and environmental dimensions.
+}
+
+% --------------------------------------------------
+\textbf{2019 -- 2020} \quad \textbf{“Measurement and Forecast of Health Human Capital in China”}, \\
+\textit{Ministry of Education Philosophy \& Social Sciences Major Project}\\
+\textcolor{RoyalBlueCustom}{
+Compiled a provincial-level panel dataset from statistical yearbooks ; conducted regression analysis to evaluate the impact of health human capital on economic growth and social innovation capacity.
+}
+
+\end{rSection}
+
+% ===== End of Research Experience =====
+\begin{rSection}{\textbf{Teaching Experience}}
+
+\textbf{Teaching Assistant}, Fudan University \hfill 2021–2023 \\
+Courses: \textit{Population Analysis}, \textit{Population Sociology}, and \textit{Population Issues and Social Policy}. \\
+\textcolor{RoyalBlueCustom}{Responsibilities included preparing lecture materials, grading assignments, facilitating class discussions, and providing student consultation.}
+
+\textbf{Workshop Presenter}, Prof. Yuan Ren’s Research Group \hfill 2021–present \\
+\textcolor{RoyalBlueCustom}{Participated in weekly research group meetings under the supervision of Prof.Yuan Ren, presenting literature reviews and statistical methods related to quantitative social research.}
+\end{rSection}
+
+
+
+\begin{rSection}{\textbf{Beyond Academic Research}}
+
+\textbf{Knowledge Sharing:}  
+In an age of fragmented information, creating knowledge-sharing content helps me clarify and consolidate my own understanding while contributing meaningful insights to the public.  
+Co-producer of two podcasts in china — \href{}{\textit{The Second Sex}} and \href{}{\textit{Healthy Talk}}.
+
+\textbf{Swimming:}  
+I find wisdom in the philosophy of water — to be focused yet flexible, embracing change with calmness and quiet strength.
+\textcolor{RoyalBlueCustom}{\textbf{Be water, my friend :)}}
+\end{rSection}
+
+
+
+
+
+\end{document} % 结束文档
